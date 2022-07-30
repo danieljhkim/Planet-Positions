@@ -9,7 +9,7 @@ function Canvas(props) {
   const calculateSize = () => {
     let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if(width < 600) {
-      width = width - 50;
+      width = width - 30;
     } else if (width >= 600 && width < 800) {
       width = width - 200;
     } else {
@@ -50,7 +50,6 @@ function Canvas(props) {
     gradient.addColorStop(1, 'rgb(0,0,0)');
     context.fillStyle = gradient;
     context.fillRect(0, 0, width, height);
-
     context.shadowBlur = '150';
     context.shadowColor = 'rgb(250,0,0)';
     context.fillStyle = 'rgb(250,250,0)';                 
@@ -61,7 +60,6 @@ function Canvas(props) {
   }
 
   const drawPlanets = (sratio, context) => {
-
     const planets = (planetOBj, sratio, context) => {        
       let t = ((dateTime - TUNIX) / planetOBj.year) + planetOBj.position;
       if (t >= 0){
@@ -79,10 +77,15 @@ function Canvas(props) {
       context.fillStyle = planetOBj.color;
       context.beginPath();
       context.arc(x, y, size, 0, Math.PI*2, false);
-      context.closePath();       
+      context.closePath();   
       context.fill();
-    }
+      const name = planetOBj.name;
+      let fontsize = 10;
+      let fonttext = fontsize + "px serif";
+      context.font = fonttext;
+      context.fillText(name, x+5, y-17);
 
+    }
     planets(MERCURY, sratio, context);
     planets(VENUS, sratio, context);
     planets(EARTH, sratio, context);
@@ -96,23 +99,23 @@ function Canvas(props) {
   const drawWritings = (sratio, context) => {        
     context.fillStyle = 'rgb(255,255,255)';
     const title = "Solar Clock";
-    var fontsize = 50 * sratio;
-    var fonttext = "bold " + fontsize + "px " + "serif";
+    let fontsize = 50 * sratio;
+    let fonttext = "bold " + fontsize + "px serif";
     context.font = fonttext;
     context.fillText(title, 11*sratio, 50*sratio);
     const descript = 'Planetary Tracking System';
-    var fontsize = 23 * sratio;
-    var fonttext = fontsize + "px " + "serif";          
+    fontsize = 23 * sratio;
+    fonttext = fontsize + "px serif";          
     context.font = fonttext;
     context.fillText(descript, 12*sratio, 80*sratio);
     let currentdate = new Date(dateTime);
-    var fontsize = 18 * sratio;
-    var fonttext = fontsize + "px " + "serif";
+    fontsize = 18 * sratio;
+    fonttext = fontsize + "px serif";
     context.font = fonttext;
     context.fillText(currentdate, 13*sratio, 110*sratio);
-    const name = 'Operator: DJHK';
-    var fontsize = 20 * sratio;
-    var fonttext = fontsize + "px " + "serif";
+    const name = 'PlanetPositions.org';
+    fontsize = 20 * sratio;
+    fonttext = fontsize + "px serif";
     context.font = fonttext;
     context.fillText(name, 11*sratio, 790*sratio);
   }
@@ -123,15 +126,15 @@ function Canvas(props) {
   }
   
   return (
-    <div>
-      <div>
+    <div className="canvas-outer-cont">
+      <div className="canvas-cont">
         <canvas ref={canvasRef} {...props} id='mycanvas'></canvas>
+        <p><i>*Note: positions are only approximate</i></p>
       </div>
-        <div className="cont-input">
+      <div className="input-cont">
         <form onSubmit={handleSubmit} id='inputdate'>
-          <strong> Pick Date:</strong>
+          <b>Pick Date</b>
           <input type="date" name="dateInput"/ >
-          <br></br>
           <button>Submit</button>
         </form>
       </div>

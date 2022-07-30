@@ -1,11 +1,15 @@
-import './App.css';
 import Canvas from './components/canvas/index';
+import Navigation from './components/navigation/index';
+import Footer from './components/footer/index';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <Navigation></Navigation>
       <Canvas></Canvas>
+      <Footer></Footer>
     </div>
   );
 }
