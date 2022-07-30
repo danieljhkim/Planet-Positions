@@ -4,4 +4,16 @@
 
 .logo-cont {
   color: white !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-cont img {
+  display: block;
+  margin-right: 5px;
+}
+
+.logo-cont div {
+  font-weight: bold;
 }

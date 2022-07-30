@@ -103,7 +103,7 @@ function Canvas(props) {
     let fonttext = "bold " + fontsize + "px serif";
     context.font = fonttext;
     context.fillText(title, 11*sratio, 50*sratio);
-    const descript = 'Planetary Tracking System';
+    const descript = 'Planetary Positioning System';
     fontsize = 23 * sratio;
     fonttext = fontsize + "px serif";          
     context.font = fonttext;

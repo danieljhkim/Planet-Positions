@@ -10,12 +10,12 @@ function Navigation() {
           <Navbar.Brand className="logo-cont" href="/">
             <img
               alt=""
-              src=""
-              width="30"
-              height="30"
+              src={require('../../assets/planetsgif.gif')}
+              width="40"
+              height="40"
               className="d-inline-block align-top"
             />{' '}
-            PlanetPositions
+            <div>PlanetPositions</div>
           </Navbar.Brand>
         </Container>
       </Navbar>
