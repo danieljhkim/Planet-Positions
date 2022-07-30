@@ -12,7 +12,6 @@ function App() {
         <Canvas></Canvas>
         <Footer></Footer>
       </div>
-
     </div>
   );
 }

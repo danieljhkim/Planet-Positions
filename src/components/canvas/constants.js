@@ -5,6 +5,7 @@ const EARTH = {
   size: 197/13,
   position: .48,
   name: 'Earth',
+  yOffset: -12
 };
 
 const MERCURY = {
@@ -13,7 +14,8 @@ const MERCURY = {
   color: 'rgb(100,80,80)',
   size: 50/6,
   position: .04,
-  name: 'Mercury'
+  name: 'Mercury',
+  yOffset: -5
 };
 
 const VENUS = {
@@ -22,7 +24,8 @@ const VENUS = {
   color: 'brown',
   size: 177/13,
   position: .64,
-  name: 'Venus'
+  name: 'Venus',
+  yOffset: -9
 };
 
 const MARS = {
@@ -31,7 +34,8 @@ const MARS = {
   color: '#EA2027',
   size: 56/5,
   position: .26,
-  name: 'Mars'
+  name: 'Mars',
+  yOffset: -7
 };
 
 const JUPYTER = {
@@ -40,7 +44,8 @@ const JUPYTER = {
   color: 'rgb(255,140,0)',
   size: 22,
   position: .8,
-  name: 'Jupiter'
+  name: 'Jupiter',
+  yOffset: -17
 };
 
 const SATURN = {
@@ -49,7 +54,8 @@ const SATURN = {
   color: 'rgb(255,222,173)',
   size: 15,
   position: .86,
-  name: 'Saturn'
+  name: 'Saturn',
+  yOffset: -13
 };
 
 const URANUS = {
@@ -58,7 +64,8 @@ const URANUS = {
   color: 'rgb(176,196,222)',
   size: 15,
   position: .21,
-  name: 'Uranus'
+  name: 'Uranus',
+  yOffset: -14
 };
 
 const NEPTUNE = {
@@ -67,7 +74,8 @@ const NEPTUNE = {
   color: '#1E90FF',
   size: 15,
   position: .09,
-  name: 'Neptune'
+  name: 'Neptune',
+  yOffset: -14
 
 };
 

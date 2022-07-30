@@ -81,11 +81,13 @@ function Canvas(props) {
       context.arc(x, y, size, 0, Math.PI*2, false);
       context.closePath();   
       context.fill();
+      //planet label
       const name = planetOBj.name;
-      let fontsize = 10;
+      let fontsize = 11;
       let fonttext = fontsize + "px serif";
       context.font = fonttext;
-      context.fillText(name, x+5, y-17);
+      const ypos = y + planetOBj.yOffset;
+      context.fillText(name, x+5, ypos);
 
     }
     planets(MERCURY, sratio, context);

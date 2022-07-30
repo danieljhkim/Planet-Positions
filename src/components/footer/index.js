@@ -14,8 +14,8 @@ function Footer() {
             />
             <div>PlanetPositions.org</div>
         </div>
-        <div>
-
+        <div className="footer-shop">
+          <a href="https://my-store-cf76fb.creator-spring.com">Visit Our Store</a>
         </div>
       </div>
     </>
