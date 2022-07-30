@@ -64,7 +64,7 @@ const URANUS = {
 const NEPTUNE = {
   radius: 400,
   year: 164.79*365*24*60*60*1000,
-  color: 'rgb(0,0,200)',
+  color: '#1E90FF',
   size: 15,
   position: .09,
   name: 'Neptune'

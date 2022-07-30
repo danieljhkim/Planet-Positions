@@ -6,10 +6,13 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Navigation></Navigation>
-      <Canvas></Canvas>
-      <Footer></Footer>
+    <div className="body">
+      <div className="App">
+        <Navigation></Navigation>
+        <Canvas></Canvas>
+        <Footer></Footer>
+      </div>
+
     </div>
   );
 }
