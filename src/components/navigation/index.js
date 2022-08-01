@@ -19,7 +19,7 @@ function Navigation() {
             <div>PlanetPositions</div>
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link className="nav-link" href="https://my-store-cf76fb.creator-spring.com">Store</Nav.Link>
+            <Nav.Link className="nav-link" target="_blank"  href="https://alienvogue.com">Store</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
