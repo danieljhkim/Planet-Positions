@@ -15,7 +15,7 @@ function Footer() {
             <div>PlanetPositions.org</div>
         </div>
         <div className="footer-shop">
-          <a href="https://alienvogue.com">Visit Our Store</a>
+          <a target="_blank" href="https://alienvogue.com">Visit Our Store</a>
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { TUNIX, EARTH, MERCURY, VENUS, MARS, JUPYTER, SATURN, URANUS, NEPTUNE } from './constants'
+import { TUNIX, MERCURY, VENUS, MARS, JUPYTER, SATURN, URANUS, NEPTUNE, EARTH } from './constants';
 import './styles.css'
 
 function Canvas(props) {
@@ -24,16 +24,18 @@ function Canvas(props) {
   const [screenWidth, setScreenWidth] = useState(calculateSize());
   
   useEffect(() => {
-    const canvas = canvasRef.current
-    const context = canvas.getContext('2d');
-    let width = screenWidth;
-    let height = width;
-    let sratio = width / 800;
-    canvas.width = width;
-    canvas.height = height;
-    drawSun(width, height, sratio, context)
-    drawWritings(sratio, context);
-    drawPlanets(sratio, context);
+    setTimeout(()=> {
+      const canvas = canvasRef.current
+      const context = canvas.getContext('2d');
+      let width = screenWidth;
+      let height = width;
+      let sratio = width / 800;
+      canvas.width = width;
+      canvas.height = height;
+      drawSun(width, height, sratio, context)
+      drawWritings(sratio, context);
+      drawPlanets(sratio, context)
+    }, 500);
   }, [dateTime, screenWidth]);
 
 
@@ -62,7 +64,8 @@ function Canvas(props) {
   }
 
   const drawPlanets = (sratio, context) => {
-    const planets = (planetOBj, sratio, context) => {        
+
+    const planets = (planetOBj, sratio, context) => { 
       let t = ((dateTime - TUNIX) / planetOBj.year) + planetOBj.position;
       if (t >= 0){
         t = t - Math.floor(t);
@@ -74,11 +77,13 @@ function Canvas(props) {
       const normalizedRatio = planetOBj.radius * sratio;
       const x = Math.round(400 * sratio + Math.cos(t * 2 * Math.PI) * normalizedRatio);
       const y = Math.round(400 * sratio - Math.sin(t * 2 * Math.PI) * normalizedRatio);
+
       context.shadowBlur = '30';
       context.shadowColor = 'rgb(0,0,0)';
       context.fillStyle = planetOBj.color;
+
       context.beginPath();
-      context.arc(x, y, size, 0, Math.PI*2, false);
+      context.drawImage(planetOBj.img, x, y, size, size)      
       context.closePath();   
       context.fill();
       //planet label
@@ -88,7 +93,6 @@ function Canvas(props) {
       context.font = fonttext;
       const ypos = y + planetOBj.yOffset;
       context.fillText(name, x+5, ypos);
-
     }
     planets(MERCURY, sratio, context);
     planets(VENUS, sratio, context);
