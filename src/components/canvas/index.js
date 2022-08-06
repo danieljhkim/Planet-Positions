@@ -48,7 +48,7 @@ function Canvas(props) {
   const drawSun = (width, height, sratio, context) => {
     const centreX = width/2;
     const centreY = height/2;
-    const gradient = context.createRadialGradient(centreX, centreY, 200*sratio, centreX, centreY, 350*sratio);
+    const gradient = context.createRadialGradient(centreX, centreY, 150*sratio, centreX, centreY, 350*sratio);
     
     gradient.addColorStop(0,'rgb(200,200,150)');
     gradient.addColorStop(1, 'rgb(0,0,0)');
