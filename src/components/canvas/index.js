@@ -35,7 +35,7 @@ function Canvas(props) {
       drawSun(width, height, sratio, context)
       drawWritings(sratio, context);
       drawPlanets(sratio, context)
-    }, 500);
+    }, 700);
   }, [dateTime, screenWidth]);
 
 
