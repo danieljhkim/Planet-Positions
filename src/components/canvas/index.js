@@ -24,18 +24,16 @@ function Canvas(props) {
   const [screenWidth, setScreenWidth] = useState(calculateSize());
   
   useEffect(() => {
-    setTimeout(()=> {
-      const canvas = canvasRef.current
-      const context = canvas.getContext('2d');
-      let width = screenWidth;
-      let height = width;
-      let sratio = width / 800;
-      canvas.width = width;
-      canvas.height = height;
-      drawSun(width, height, sratio, context)
-      drawWritings(sratio, context);
-      drawPlanets(sratio, context)
-    }, 700);
+    const canvas = canvasRef.current
+    const context = canvas.getContext('2d');
+    let width = screenWidth;
+    let height = width;
+    let sratio = width / 800;
+    canvas.width = width;
+    canvas.height = height;
+    drawSun(width, height, sratio, context)
+    drawWritings(sratio, context);
+    drawPlanets(sratio, context)
   }, [dateTime, screenWidth]);
 
 
@@ -83,7 +81,8 @@ function Canvas(props) {
       context.fillStyle = planetOBj.color;
 
       context.beginPath();
-      context.drawImage(planetOBj.img, x, y, size, size)      
+      //context.drawImage(planetOBj.img, x, y, size, size)   
+      context.arc(x, y, size, 0, Math.PI*2, false);   
       context.closePath();   
       context.fill();
       //planet label
